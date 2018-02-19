@@ -1,0 +1,26 @@
+apiVersion: v1
+entries:
+  open-service-broker-sacloud:
+  - apiVersion: v1
+    appVersion: v0.0.1-alpha
+    created: 2018-02-19T12:09:11.897515513+09:00
+    description: A Helm chart for Open Service Broker For Sacloud
+    digest: 6ec689b5db036a9ff85a29254f81e118d33fd3820aa25012c47f988b6ebd1c88
+    home: https://github.com/sacloud/open-service-broker-sacloud
+    keywords:
+    - sakura cloud
+    - sacloud
+    - services
+    - service broker
+    maintainers:
+    - email: yamamoto.febc@gmail.com
+      name: Kazumichi Yamamoto
+    name: open-service-broker-sacloud
+    sources:
+    - https://github.com/sacloud/open-service-broker-sacloud
+    - https://hub.docker.com/r/sacloud/sacloud-service-broker/
+    tillerVersion: '>=2.7.0-rc1'
+    urls:
+    - https://sacloud.github.io/helm-charts/open-service-broker-sacloud-0.0.1-alpha.tgz
+    version: 0.0.1-alpha
+generated: 2018-02-19T12:09:11.896419989+09:00
