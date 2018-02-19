@@ -1,0 +1,7 @@
+{{- if and (not .Values.registerBroker) (eq .Values.service.type "NodePort") }}
+1. Open Service Broker for SAKURA Cloud's node port: {{ .Values.service.nodePort.port }}
+2. Credentials for connecting to the broker:
+
+    Username: {{ .Values.basicAuth.username }}
+    Password: {{ .Values.basicAuth.password }}
+{{- end }}
