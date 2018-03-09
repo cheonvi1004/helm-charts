@@ -1,8 +1,8 @@
 apiVersion: v1
 description: A Helm chart for Open Service Broker For Sacloud
 name: open-service-broker-sacloud
-version: 0.0.1
-appVersion: v0.0.1-alpha
+version: 0.0.2
+appVersion: v0.0.2
 keywords:
   - sakura cloud
   - sacloud
@@ -15,4 +15,5 @@ sources:
 maintainers:
   - name: Kazumichi Yamamoto
     email: yamamoto.febc@gmail.com
+icon: https://raw.githubusercontent.com/sacloud/images/master/usacloud_logo_notext.svg
 tillerVersion: ">=2.7.0-rc1"

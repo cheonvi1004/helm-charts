@@ -4,7 +4,7 @@ image:
   ## Image location, NOT including the tag
   repository: sacloud/open-service-broker-sacloud
   ## Image tag
-  tag: 0.0.1
+  tag: 0.0.2
   ## "IfNotPresent", "Always", or "Never"
   pullPolicy: IfNotPresent
 
