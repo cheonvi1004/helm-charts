@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   ## Image location, NOT including the tag
-  repository: sacloud/sacloud-service-broker
+  repository: sacloud/open-service-broker-sacloud
   ## Image tag
   tag: 0.0.1
   ## "IfNotPresent", "Always", or "Never"
