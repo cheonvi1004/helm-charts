@@ -1,0 +1,17 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceInstance
+metadata:
+  name: {{ template "metabase.fullname" . }}-instance
+  namespace: default
+spec:
+{{- if eq (.Values.database.type | lower) "postgres" }}
+  clusterServiceClassExternalName: sacloud-postgres
+{{- else }}
+  clusterServiceClassExternalName: sacloud-mariadb
+{{- end }}
+  clusterServicePlanExternalName: db-10g
+  parameters:
+    switchID: {{ required "A value is required for database.switchID" .Values.database.switchID }}
+    ipaddress: {{ required "A value is required for database.ipaddress" .Values.database.ipaddress }}
+    maskLen: {{ required "A value is required for database.maskLen" .Values.database.maskLen }}
+    defaultRoute: {{ required "A value is required for database.defaultRoute" .Values.database.defaultRoute }}
