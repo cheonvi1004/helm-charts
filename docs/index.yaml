@@ -3,9 +3,9 @@ entries:
   open-service-broker-sacloud:
   - apiVersion: v1
     appVersion: v0.0.1-alpha
-    created: 2018-02-19T16:35:38.30907127+09:00
+    created: 2018-03-09T09:23:04.482235+09:00
     description: A Helm chart for Open Service Broker For Sacloud
-    digest: b950270ba66f8aa4f01afdf441ce45f9c8bb338584e298f5aff3818331b3e122
+    digest: 0854b627cca190082ae9c84decaedc1f81d22e403ab81ae17ef3362a245961c5
     home: https://github.com/sacloud/open-service-broker-sacloud
     keywords:
     - sakura cloud
@@ -23,4 +23,4 @@ entries:
     urls:
     - https://sacloud.github.io/helm-charts/open-service-broker-sacloud-0.0.1.tgz
     version: 0.0.1
-generated: 2018-02-19T16:35:38.307980943+09:00
+generated: 2018-03-09T09:23:04.481152+09:00

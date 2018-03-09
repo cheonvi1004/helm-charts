@@ -36,7 +36,7 @@ helm repo add sacloud https://sacloud.github.io/helm-charts/
 Next, install from the azure repo:
 
 ```console
-$ helm install sacloud/open-service-broker-sacloud--name osbs --namespace osbs \
+$ helm install sacloud/open-service-broker-sacloud --name osbs --namespace osbs \
   --set sacloud.accessToken=$SAKURACLOUD_ACCESS_TOKEN \
   --set sacloud.accessTokenSecret=$SAKURACLOUD_ACCESS_TOKEN_SECRET \
   --set sacloud.zone=$SAKURACLOUD_ZONE
