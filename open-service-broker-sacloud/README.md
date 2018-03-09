@@ -33,7 +33,7 @@ Installation of this chart is simple. First, add the Sacloud charts repository t
 helm repo add sacloud https://sacloud.github.io/helm-charts/
 ```                                             
 
-Next, install from the azure repo:
+Next, install from the sacloud repo:
 
 ```console
 $ helm install sacloud/open-service-broker-sacloud --name osbs --namespace osbs \
@@ -69,8 +69,8 @@ deletes the release.
 
 ## Configuration
 
-The following tables lists the configurable parameters of the Azure Service
-Broker chart and their default values.
+The following tables lists the configurable parameters of the Service
+Broker for SAKURA Cloud chart and their default values.
 
 | Parameter                   | Description | Default |
 | --------------------------- | ----------- | ------- |
