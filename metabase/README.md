@@ -20,7 +20,7 @@ $ helm install --name my-release sacloud/metabase \
                --set database.switchID=<your-switch-id> \
                --set database.ipaddress=<your-db-ip> \
                --set database.maskLen=<your-db-network-mask-len> \
-               --set database.defaultRoute=<your-db-default-route-ip> \
+               --set database.defaultRoute=<your-db-default-route-ip>
 ```
 
 The command deploys Metabase on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
