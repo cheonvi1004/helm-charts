@@ -1,0 +1,57 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  labels:
+    k8s-app: cloud-controller-manager
+  name: {{ template "sakura-cloud-controller-manager.name" . }}
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      k8s-app: cloud-controller-manager
+  template:
+    metadata:
+      labels:
+        k8s-app: cloud-controller-manager
+    spec:
+      serviceAccountName: {{ template "sakura-cloud-controller-manager.name" . }}
+      containers:
+      - name: {{ template "sakura-cloud-controller-manager.name" . }}
+        image: "{{ .Values.controller.image.repository }}:{{ .Values.controller.image.tag }}"
+        command:
+        - /usr/local/bin/sakura-cloud-controller-manager
+        - --cloud-provider=sakuracloud
+        - --leader-elect=true
+        - --use-service-account-credentials=false
+        - --allocate-node-cidrs=false
+        - --configure-cloud-routes=false
+        - --allow-untagged-cloud
+        env:
+        - name: SAKURACLOUD_ACCESS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "sakura-cloud-controller-manager.fullname" . }}
+              key: access-token
+        - name: SAKURACLOUD_ACCESS_TOKEN_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "sakura-cloud-controller-manager.fullname" . }}
+              key: access-token-secret
+        - name: SAKURACLOUD_ZONE
+          value: {{ required "A value is required for sacloud.zone" .Values.sacloud.zone | quote }}
+        - name: SAKURACLOUD_CLUSTER_ID
+          value: {{ .Values.sacloud.clusterID | quote }}
+
+      tolerations:
+      # this is required so CCM can bootstrap itself
+      - key: node.cloudprovider.kubernetes.io/uninitialized
+        value: "true"
+        effect: NoSchedule
+      # this is to have the daemonset runnable on master nodes
+      # the taint may vary depending on your cluster setup
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      # this is to restrict CCM to only run on master nodes
+      # the node selector may vary depending on your cluster setup
+      nodeSelector:
+        node-role.kubernetes.io/master: ""

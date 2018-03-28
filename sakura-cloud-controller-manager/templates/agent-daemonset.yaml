@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: {{ template "sakura-cloud-controller-manager.name" . }}-agent
+  namespace: kube-system
+spec:
+  template:
+    metadata:
+      labels:
+        name: {{ template "sakura-cloud-controller-manager.name" . }}-agent
+    spec:
+      serviceAccountName: {{ template "sakura-cloud-controller-manager.name" . }}-agent
+      hostNetwork: true
+      containers:
+        - name: {{ template "sakura-cloud-controller-manager.name" . }}-agent
+          image: "{{ .Values.agent.image.repository }}:{{ .Values.agent.image.tag }}"
+          imagePullPolicy: {{ .Values.agent.image.pullPolicy }}
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - mountPath: /dev
+              name: dev
+      volumes:
+        - name: dev
+          hostPath:
+            path: /dev

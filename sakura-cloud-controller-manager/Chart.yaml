@@ -1,0 +1,18 @@
+apiVersion: v1
+description: A Helm chart for cloud-controller-manager for SAKURA Cloud
+name: sakura-cloud-controller-manager
+version: 0.0.1
+appVersion: v0.0.1
+keywords:
+  - sakura cloud
+  - sacloud
+  - cloud controller manager
+home: https://github.com/sacloud/sakura-cloud-controller-manager
+sources:
+  - https://github.com/sacloud/sakura-cloud-controller-manager
+  - https://hub.docker.com/r/sacloud/sakura-cloud-controller-manager
+maintainers:
+  - name: Kazumichi Yamamoto
+    email: yamamoto.febc@gmail.com
+icon: https://raw.githubusercontent.com/sacloud/images/master/usacloud_logo_notext.svg
+tillerVersion: ">=2.7.0-rc1"
