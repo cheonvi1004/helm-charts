@@ -3,7 +3,7 @@ entries:
   metabase:
   - apiVersion: v1
     appVersion: v0.27.2
-    created: 2018-03-28T14:46:11.758897+09:00
+    created: 2018-03-28T16:17:34.793898+09:00
     description: The easy, open source way for everyone in your company to ask questions
       and learn from data.
     digest: cb7cb99711c5efb9fd5a4eba50ad73db3b318bbbcbb58a5c1982150dc7a8e777
@@ -21,7 +21,7 @@ entries:
   open-service-broker-sacloud:
   - apiVersion: v1
     appVersion: v0.0.2
-    created: 2018-03-28T14:46:11.760464+09:00
+    created: 2018-03-28T16:17:34.796196+09:00
     description: A Helm chart for Open Service Broker For Sacloud
     digest: 6d99e271953b685a7b8555ede5826427a4fb59ed21272b800f316b02635f0311
     home: https://github.com/sacloud/open-service-broker-sacloud
@@ -44,7 +44,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: v0.0.1-alpha
-    created: 2018-03-28T14:46:11.760059+09:00
+    created: 2018-03-28T16:17:34.795748+09:00
     description: A Helm chart for Open Service Broker For Sacloud
     digest: 2c348180e982833fddae7bdda1d48431711c7ecc9762df9963cf58de1d789fe2
     home: https://github.com/sacloud/open-service-broker-sacloud
@@ -67,7 +67,29 @@ entries:
   sakura-cloud-controller-manager:
   - apiVersion: v1
     appVersion: v0.0.1
-    created: 2018-03-28T14:46:11.760869+09:00
+    created: 2018-03-28T16:17:34.797835+09:00
+    description: A Helm chart for cloud-controller-manager for SAKURA Cloud
+    digest: 762f86456878f27b6da230b03488ef671b1191704a5305988f27b71f06874211
+    home: https://github.com/sacloud/sakura-cloud-controller-manager
+    icon: https://raw.githubusercontent.com/sacloud/images/master/usacloud_logo_notext.svg
+    keywords:
+    - sakura cloud
+    - sacloud
+    - cloud controller manager
+    maintainers:
+    - email: yamamoto.febc@gmail.com
+      name: Kazumichi Yamamoto
+    name: sakura-cloud-controller-manager
+    sources:
+    - https://github.com/sacloud/sakura-cloud-controller-manager
+    - https://hub.docker.com/r/sacloud/sakura-cloud-controller-manager
+    tillerVersion: '>=2.7.0-rc1'
+    urls:
+    - https://sacloud.github.io/helm-charts/sakura-cloud-controller-manager-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
+    appVersion: v0.0.1
+    created: 2018-03-28T16:17:34.796938+09:00
     description: A Helm chart for cloud-controller-manager for SAKURA Cloud
     digest: 7b4628b64ed2d020a294730b6dc4173d9690b224e3b8d8f55ac88da676acddf2
     home: https://github.com/sacloud/sakura-cloud-controller-manager
@@ -87,4 +109,4 @@ entries:
     urls:
     - https://sacloud.github.io/helm-charts/sakura-cloud-controller-manager-0.0.1.tgz
     version: 0.0.1
-generated: 2018-03-28T14:46:11.758172+09:00
+generated: 2018-03-28T16:17:34.792309+09:00
