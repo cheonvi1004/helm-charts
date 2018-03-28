@@ -1,0 +1,30 @@
+# Default values for sakura-cloud-controller-manager.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+controller:
+  image:
+    repository: sacloud/sakura-cloud-controller-manager
+    tag: 0.0.1
+    pullPolicy: IfNotPresent
+
+agent:
+  image:
+    repository: sacloud/sakura-vip-agent
+    tag: 0.0.1
+    pullPolicy: IfNotPresent
+
+sacloud:
+  ## Required; this is the identifier for the SAKURA Cloud account into which services
+  ## will be provisioned. BE AWARE THAT DOING SO WILL COST YOU MONEY!
+  accessToken:
+  ## Required; this is the identifier for the SAKURA Cloud account into which services
+  ## will be provisioned. BE AWARE THAT DOING SO WILL COST YOU MONEY!
+  accessTokenSecret:
+  ## Required; this is the identifier of the SAKURA Cloud zone which services
+  ## will be provisioned.
+  ## Valid values are "is1a", "is1b" and "tk1a", Defaults to "tk1a"
+  zone: tk1a
+
+  ## This is the identifier of the Kubernetes cluster
+  clusterID:
