@@ -55,9 +55,6 @@ The following tables lists the configurable parameters of the `sakura-cloud-cont
 | `controller.image.repository` | Docker image location, _without_ the tag. | `"sacloud/sakura-cloud-controller-manager"` |
 | `controller.image.tag`        | Tag / version of the Docker image. | `"0.0.2"` |
 | `controller.image.pullPolicy` | `"IfNotPresent"`, `"Always"`, or `"Never"`; When launching a pod, this option indicates when to pull the OSBS Docker image. | `"IfNotPresent"` |
-| `agent.image.repository`      | Docker image location, _without_ the tag. | `"sacloud/sakura-vip-agent"` |
-| `agent.image.tag`             | Tag / version of the Docker image. | `"0.0.1"` |
-| `agent.image.pullPolicy`      | `"IfNotPresent"`, `"Always"`, or `"Never"`; When launching a pod, this option indicates when to pull the OSBS Docker image. | `"IfNotPresent"` |
 | `sacloud.accessToken`         | SAKURA CLOUD API access-token. | none |
 | `sacloud.accessTokenSecret`   | SAKURA CLOUD API access-token-secret. | none |
 | `sacloud.zone`                | Target zone. | none |

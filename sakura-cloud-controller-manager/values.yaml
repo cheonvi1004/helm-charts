@@ -8,12 +8,6 @@ controller:
     tag: 0.0.3
     pullPolicy: IfNotPresent
 
-agent:
-  image:
-    repository: sacloud/sakura-vip-agent
-    tag: 0.0.1
-    pullPolicy: IfNotPresent
-
 sacloud:
   ## Required; this is the identifier for the SAKURA Cloud account into which services
   ## will be provisioned. BE AWARE THAT DOING SO WILL COST YOU MONEY!
