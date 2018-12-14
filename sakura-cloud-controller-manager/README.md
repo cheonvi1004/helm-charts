@@ -6,7 +6,7 @@ This chart bootstraps `sakura-cloud-controller-manager` in your Kubernetes clust
 
 ## Prerequisites
 
-- [Kubernetes](https://kubernetes.io/) 1.7+ with RBAC enabled
+- [Kubernetes](https://kubernetes.io/) 1.12+ with RBAC enabled
 - An SAKURA CLOUD API Key
 
 For convenience in subsequent steps, we will export several of the fields above
@@ -53,7 +53,7 @@ The following tables lists the configurable parameters of the `sakura-cloud-cont
 | Parameter                   | Description | Default |
 | --------------------------- | ----------- | ------- |
 | `controller.image.repository` | Docker image location, _without_ the tag. | `"sacloud/sakura-cloud-controller-manager"` |
-| `controller.image.tag`        | Tag / version of the Docker image. | `"0.0.2"` |
+| `controller.image.tag`        | Tag / version of the Docker image. | `"0.2.0"` |
 | `controller.image.pullPolicy` | `"IfNotPresent"`, `"Always"`, or `"Never"`; When launching a pod, this option indicates when to pull the OSBS Docker image. | `"IfNotPresent"` |
 | `sacloud.accessToken`         | SAKURA CLOUD API access-token. | none |
 | `sacloud.accessTokenSecret`   | SAKURA CLOUD API access-token-secret. | none |

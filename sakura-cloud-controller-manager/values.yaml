@@ -5,7 +5,7 @@
 controller:
   image:
     repository: sacloud/sakura-cloud-controller-manager
-    tag: 0.0.5
+    tag: 0.2.0
     pullPolicy: IfNotPresent
 
 sacloud:
@@ -22,3 +22,31 @@ sacloud:
 
   ## This is the identifier of the Kubernetes cluster
   clusterID:
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 256m
+    memory: 256Mi
+
+daemonset:
+  tolerations:
+    # this is required so CCM can bootstrap itself
+    - key: node.cloudprovider.kubernetes.io/uninitialized
+      value: "true"
+      effect: NoSchedule
+
+    - key: "CriticalAddonsOnly"
+      operator: "Exists"
+
+    # this is to have the daemonset runnable on master nodes
+    # the taint may vary depending on your cluster setup
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
+
+  nodeSelector:
+    # this is to restrict CCM to only run on master nodes
+    # the node selector may vary depending on your cluster setup
+    node-role.kubernetes.io/master: ""

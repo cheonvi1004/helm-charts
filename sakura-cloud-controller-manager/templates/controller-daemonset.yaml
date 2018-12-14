@@ -14,10 +14,14 @@ spec:
       labels:
         k8s-app: cloud-controller-manager
     spec:
+      dnsPolicy: Default
+      hostNetwork: true
       serviceAccountName: {{ template "sakura-cloud-controller-manager.name" . }}
       containers:
       - name: {{ template "sakura-cloud-controller-manager.name" . }}
         image: "{{ .Values.controller.image.repository }}:{{ .Values.controller.image.tag }}"
+        resources:
+{{ toYaml .Values.resources | indent 12 }}
         command:
         - /usr/local/bin/sakura-cloud-controller-manager
         - --cloud-provider=sakuracloud
@@ -25,7 +29,6 @@ spec:
         - --use-service-account-credentials=false
         - --allocate-node-cidrs=false
         - --configure-cloud-routes=false
-        - --allow-untagged-cloud
         env:
         - name: SAKURACLOUD_ACCESS_TOKEN
           valueFrom:
@@ -41,17 +44,7 @@ spec:
           value: {{ required "A value is required for sacloud.zone" .Values.sacloud.zone | quote }}
         - name: SAKURACLOUD_CLUSTER_ID
           value: {{ .Values.sacloud.clusterID | quote }}
-
       tolerations:
-      # this is required so CCM can bootstrap itself
-      - key: node.cloudprovider.kubernetes.io/uninitialized
-        value: "true"
-        effect: NoSchedule
-      # this is to have the daemonset runnable on master nodes
-      # the taint may vary depending on your cluster setup
-      - key: node-role.kubernetes.io/master
-        effect: NoSchedule
-      # this is to restrict CCM to only run on master nodes
-      # the node selector may vary depending on your cluster setup
+{{ toYaml .Values.daemonset.tolerations | indent 8 }}
       nodeSelector:
-        node-role.kubernetes.io/master: ""
+{{ toYaml .Values.daemonset.nodeSelector | indent 8 }}
