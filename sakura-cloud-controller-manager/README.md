@@ -35,7 +35,7 @@ helm fetch sacloud/sakura-cloud-controller-manager
 Generate manifests via `helm template`:
 
 ```console
-$ helm template sakura-cloud-controller-manager-0.2.0.tgz --name sakura-cloud-controller-manager \
+$ helm template sakura-cloud-controller-manager-0.3.0.tgz --name sakura-cloud-controller-manager \
   --set sacloud.accessToken=$SAKURACLOUD_ACCESS_TOKEN \
   --set sacloud.accessTokenSecret=$SAKURACLOUD_ACCESS_TOKEN_SECRET \
   --set sacloud.zone=$SAKURACLOUD_ZONE > sakura-cloud-controller-manager-deploy.yaml 
@@ -66,7 +66,7 @@ The following tables lists the configurable parameters of the `sakura-cloud-cont
 | Parameter                   | Description | Default |
 | --------------------------- | ----------- | ------- |
 | `controller.image.repository` | Docker image location, _without_ the tag. | `"sacloud/sakura-cloud-controller-manager"` |
-| `controller.image.tag`        | Tag / version of the Docker image. | `"0.2.0"` |
+| `controller.image.tag`        | Tag / version of the Docker image. | `"0.3.0"` |
 | `controller.image.pullPolicy` | `"IfNotPresent"`, `"Always"`, or `"Never"`; When launching a pod, this option indicates when to pull the OSBS Docker image. | `"IfNotPresent"` |
 | `sacloud.accessToken`         | SAKURA CLOUD API access-token. | none |
 | `sacloud.accessTokenSecret`   | SAKURA CLOUD API access-token-secret. | none |
@@ -87,9 +87,9 @@ Alternatively, copy the charts default values to a file, edit the file to your
 liking, and reference that file in your `helm install` command:
 
 ```console
-$ helm inspect values sakura-cloud-controller-manager-0.2.0.tgz > my-values.yaml
+$ helm inspect values sakura-cloud-controller-manager-0.3.0.tgz > my-values.yaml
 $ vim my-values.yaml
-$ helm template sakura-cloud-controller-manager-0.2.0.tgz --name sakura-cloud-controller-manager --values my-values.yaml > sakura-cloud-controller-manager-deploy.yaml
+$ helm template sakura-cloud-controller-manager-0.3.0.tgz --name sakura-cloud-controller-manager --values my-values.yaml > sakura-cloud-controller-manager-deploy.yaml
 $ kubectl apply -f sakura-cloud-controller-manager-deploy.yaml
 ```
 
