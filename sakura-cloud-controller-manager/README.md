@@ -4,6 +4,11 @@
 
 This chart bootstraps `sakura-cloud-controller-manager` in your Kubernetes cluster.
 
+# Note: This chart is not maintained!
+
+Don't use this chart for sakura-cloud-controller-manager v0.4 later please.
+New deployment way is [here](https://github.com/sacloud/sakura-cloud-controller-manager/blob/master/README.md#deploy).
+
 ## Prerequisites
 
 - [Kubernetes](https://kubernetes.io/) 1.12+ with RBAC enabled
